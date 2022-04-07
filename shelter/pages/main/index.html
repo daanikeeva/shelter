@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="#" class="menu__link">About the shelter</a>
+                            <a href="#" class="menu__link menu__link_active">About the shelter</a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link">Our pets</a>
@@ -35,20 +36,21 @@
             </div>
         </header>
         <main class="main">
-            <div class="container main__container">
                 <section class="main__start-screen start-screen">
-                    <div class="start-screen__content">
-                        <h2 class="start-screen__title">Not only people need a house</h2>
-                        <p class="start-screen__description">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                        <button onclick="document.location.href='#our-friends'">Make a friend</button>
+                    <div class="start-screen__container container">
+                        <div class="start-screen__content">
+                            <h2 class="start-screen__title">Not only people <br>need a house</h2>
+                            <p class="start-screen__description">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                            <button class ="start-screen__btn primary-btn" onclick="document.location.href='#our-friends'">Make a friend</button>
+                        </div>
+                        <img class="start-screen__image" src="../../assets/images/start-screen-puppy.png" alt="puppy">
                     </div>
-                    <img class="start-screen__image" src="../../assets/images/start-screen-puppy.png" alt="puppy">
                 </section>
                 <section class="main__about about">
                     <div class="about__container container">
                         <img src="../../assets/images/about-pets.png" alt="pets" class="about__image">
                         <div class="about__content">
-                            <h3 class="about__title section-title">About the shelter “Cozy House”</h3>
+                            <h3 class="about__title section-title">About the shelter<br>“Cozy House”</h3>
                             <p class="about__text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
                             <p class="about__text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
                         </div>
@@ -56,34 +58,34 @@
                 </section>
                 <section class="main__our-friends our-friends">
                     <div class="our-friends__container container">
-                        <h3 class="our-friends__title section-title">Our friends who
-                            are looking for a house</h3>
+                        <h3 class="our-friends__title section-title">Our friends who<br>are looking for a house</h3>
                         <div class="our-friends__slider slider">
-                            <div class="slider__item pet" data-pet="katrine">
-                                <img class="pet__photo" src="../../assets/images/pets-katrine.png" alt="photo pet Katrine">
-                                <h4 class="pet__name">Katrine</h4>
-                                <button class="pet__btn">Learn more</button>
-                            </div>
-                            <div class="slider__item pet" data-pet="jennifer">
-                                <img class="pet__photo" src="../../assets/images/pets-jennifer.png" alt="photo pet Katrine">
-                                <h4 class="pet__name">Jennifer</h4>
-                                <button class="pet__btn">Learn more</button>
-                            </div>
-                            <div class="slider__item pet" data-pet="woody">
-                                <img class="pet__photo" src="../../assets/images/pets-woody.png" alt="photo pet Katrine">
-                                <h4 class="pet__name">Woody</h4>
-                                <button class="pet__btn">Learn more</button>
-                            </div>
                             <button class="slider__prev"><img src="../../assets/icons/prev.svg" alt=""></button>
+                            <div class="slider__cards">
+                                <div class="slider__item pet" data-pet="katrine">
+                                    <img class="pet__photo" src="../../assets/images/pets-katrine.png" alt="photo pet Katrine">
+                                    <h4 class="pet__name">Katrine</h4>
+                                    <button class="pet__btn">Learn more</button>
+                                </div>
+                                <div class="slider__item pet" data-pet="jennifer">
+                                    <img class="pet__photo" src="../../assets/images/pets-jennifer.png" alt="photo pet Katrine">
+                                    <h4 class="pet__name">Jennifer</h4>
+                                    <button class="pet__btn">Learn more</button>
+                                </div>
+                                <div class="slider__item pet" data-pet="woody">
+                                    <img class="pet__photo" src="../../assets/images/pets-woody.png" alt="photo pet Katrine">
+                                    <h4 class="pet__name">Woody</h4>
+                                    <button class="pet__btn">Learn more</button>
+                                </div>
+                            </div>
                             <button class="slider__next"><img src="../../assets/icons/next.svg" alt=""></button>
                         </div>
-                        <button class="our-friends__btn">Get to know the rest</button>
+                        <button class="our-friends__btn primary-btn">Get to know the rest</button>
                     </div>
                 </section>
                 <section class="main__help help">
                     <div class="help__container container">
-                        <h3 class="help__title section-title">How you can help
-                            our shelter</h3>
+                        <h3 class="help__title section-title">How you can help<br>our shelter</h3>
                         <ul class="help__list">
                             <li class="help__item">
                                 <img class="help__icon" src="../../assets/icons/icon-pet-food.svg" alt="" >
@@ -128,7 +130,7 @@
                     <div class="donation__container container">
                         <img src="../../assets/images/donation-dog.png" alt="dog" class="donation__image">
                         <div class="donation__content">
-                            <h3 class="donation__title section-title">You can also make a donation</h3>
+                            <h3 class="donation__title section-title">You can also<br>make a donation</h3>
                             <div class="donation__subtitle">Name of the bank / Type of bank account</div>
                             <a href="#" class="donation__link">
                                 <img src="../../assets/icons/credit-card.svg" alt="">
@@ -138,7 +140,6 @@
                         </div>
                     </div>
                 </section>
-            </div>
         </main>
         <footer class="footer">
             <div class="footer__container container">
@@ -161,5 +162,6 @@
             </div>
         </footer>
     </div>
+
 </body>
 </html>
