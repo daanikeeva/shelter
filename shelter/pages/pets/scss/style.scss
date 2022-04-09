@@ -1,0 +1,321 @@
+
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$color-dark-s: #CDCDCD; 
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-3xl: #292929;
+$color-dark: #000000;
+
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6; 
+$color-light-xl: #FFFFFF;
+
+
+html {
+    scroll-behavior: smooth; 
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    // width: 1280px;
+}
+.main {
+    flex-basis: auto;
+} 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+// ======= bloks =====
+.section-title {
+    font-family: 'Georgia';
+    font-size: 35px;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+.primary-btn {
+    padding: 15px 45px;
+    font-family: 'Georgia';
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    color: $color-dark-3xl;
+    background-color: $color-primary;
+    border-radius: 100px;
+
+    &:hover {
+        background: $color-primary-light;
+    }
+}
+
+
+
+// ========== header ==========
+.header {
+    background-color: $color-light-xl;
+    position: sticky;
+    top: 0;
+    &__container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        text-align:right;
+    }
+    &__menu {
+    }
+}
+
+.logo {
+    &__title {
+        margin-bottom: 10px;
+        font-family: 'Georgia';
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 35px;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+    &__subtitle {
+        font-family: 'Arial';
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        color: $color-dark-3xl;
+    }
+}
+
+
+.menu {
+    
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 35px;
+    }
+    &__item {
+    }
+    &__link {
+        display: inline-block;
+        line-height: 24px;
+        letter-spacing: 0.075px;
+        color: $color-dark-l;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-dark-3xl;
+        }
+    }
+    &__link_active {
+        color: $color-dark-3xl;
+        border-bottom: 3px solid $color-primary;
+
+    }
+}
+// =========== main =============
+
+
+
+.our-friends {
+    padding-top: 80px;
+    padding-bottom: 100px;    
+    background-color: $color-light-l;
+    
+    &__container {
+        
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 59px;
+    }
+    .our-friends__cards {
+        margin-bottom: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 40px;
+        row-gap: 30px;
+
+
+    }
+}
+
+.pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 270px;
+    border-radius: 9px;
+    background-color: $color-light-s;
+    overflow-x: hidden;
+
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-light-xl;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+        .pet__btn {
+            transition: 0.3s;
+            border-color: $color-primary-light;
+            background-color: $color-primary-light
+        }
+        .pet__btn:hover {
+            background-color: transparentize($color-primary-light, 0.5);
+        }
+    }
+
+    * {
+        margin-bottom: 30px;
+    }
+    &__photo {
+        height: 270px;
+    }
+    &__name {
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+    &__btn {
+        box-sizing: border-box;
+        width: 187px;
+        height: 52px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $color-primary;
+        border-radius: 100px;
+        font-family: 'Georgia';
+        font-size: 17px;
+        line-height: 1.3;
+        letter-spacing: 0.06em;
+        background: transparent;
+        color: $color-dark-3xl;
+    }
+}
+.our-friends__navigation {
+}
+.navigation {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+
+    &__btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #F1CDB3;
+        color: $color-dark-3xl;
+        background: transparent;
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 1.09;
+        
+    }
+    &__btn_disabled {
+        cursor: default;
+        color: $color-dark-s;
+        border-color: $color-dark-s;
+    }
+    &__btn_to-start {
+    }
+    &__btn_prev {
+    }
+    &__btn_now {
+        background-color: $color-primary;
+    }
+    &__btn_next {
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+        }
+    }
+    &__btn_to-end {
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+        }
+    }
+}
+
+.footer {
+    background: url(../../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+
+    &__container {
+        margin-top: 40px;
+    }
+    &__row {
+        height: 310px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    
+    &__contacts {
+        padding-top: 16px;
+        padding-bottom: 60px;
+        width: 279px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__title {
+        font-family: 'Georgia';
+        font-size: 35px;
+        line-height: 1.3;
+        letter-spacing: 0.06em;
+        color: $color-light-xl;
+    }
+    &__email {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: $color-primary;
+        
+        & img {
+            margin-right: 20px;
+        }
+    }
+    &__location {
+        width: 302px;
+        padding-top: 16px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+    }
+    &__image {
+        width: 300px;
+        min-height: 310px;
+        // flex-shrink: 0;
+
+    }
+}

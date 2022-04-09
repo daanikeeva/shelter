@@ -1,0 +1,496 @@
+
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$color-dark-s: #CDCDCD; 
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-3xl: #292929;
+$color-dark: #000000;
+
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6; 
+$color-light-xl: #FFFFFF;
+
+
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    background: url(../../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    // width: 1280px;
+}
+.main {
+    flex-basis: auto;
+} 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+// ======= bloks =====
+.section-title {
+    font-family: 'Georgia';
+    font-size: 35px;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+.primary-btn {
+    padding: 15px 45px;
+    font-family: 'Georgia';
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    color: $color-dark-3xl;
+    background-color: $color-primary;
+    border-radius: 100px;
+    transition: 0.3s;
+
+    &:hover {
+        background: $color-primary-light;
+    }
+}
+
+
+
+// ========== header ==========
+.header {
+    &__container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        text-align:right;
+    }
+    &__menu {
+    }
+}
+
+.logo {
+    &__title {
+        margin-bottom: 10px;
+        font-family: 'Georgia';
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 35px;
+        letter-spacing: 0.06em;
+        color: $color-primary;
+    }
+    &__subtitle {
+        font-family: 'Arial';
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        color: $color-light-xl;
+    }
+}
+
+
+.menu {
+    
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 35px;
+    }
+    &__item {
+    }
+    &__link {
+        display: inline-block;
+        line-height: 24px;
+        letter-spacing: 0.075px;
+        color: $color-dark-s;
+        transition: 0.3s;
+        &:hover {
+            color: $color-light-s;
+        }
+    }
+    &__link_active {
+        color: $color-light-s;
+        border-bottom: 3px solid $color-primary;
+
+    }
+}
+// =========== main =============
+.main {
+    &__container {
+    }
+    &__start-screen {
+    }
+    &__about {
+    }
+    &__our-friends {
+    }
+}
+
+
+.start-screen {
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    &__content {
+        width: 460px / 1200px * 100%;
+        padding: 163px 0 243px 0;
+    }
+    &__title {
+        margin-bottom: 42px;
+        font-family: 'Georgia';
+        font-size: 44px;
+        line-height: 1.3;
+        color: $color-light-xl;
+    }
+    &__description {
+        margin-bottom: 42px;
+        color: $color-light-l;
+    }
+    &__image {
+        width: 698px / 1200px * 100%;
+        height: auto;
+    }
+}
+
+
+.about {
+    background-color: $color-light-xl;
+    padding-top: 80px;
+    padding-bottom: 100px;    
+    
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+    }
+    &__image {
+    }
+    &__content {
+        width: 430px;
+
+        *:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+    &__title {
+    }
+    &__text {
+    }
+}
+
+
+.our-friends {
+    padding-top: 80px;
+    padding-bottom: 100px;    
+    background-color: $color-light-l;
+    
+    &__container {
+        
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__slider {
+        margin-bottom: 59px;
+    }
+    &__btn {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        width: 261px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.slider {
+    display: grid;
+    grid-template-columns: 52px auto 52px;
+    column-gap: 52px;
+    align-items: center;
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        // column-gap: 7.5%;
+
+        
+    }
+    &__item {
+    
+    }
+    
+    &__prev {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-primary;
+        border-radius: 100px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        &:hover {
+            border: 2px solid $color-primary-light;
+            background-color: $color-primary-light;
+        }
+    }
+    &__next {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-primary;
+        border-radius: 100px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        &:hover {
+            background-color: $color-primary;
+        }
+    
+    }
+    
+    
+}
+.pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 270px / 1200px;
+    border-radius: 9px;
+    background-color: $color-light-s;
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-light-xl;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+        .pet__btn {
+            transition: 0.3s;
+            border-color: $color-primary-light;
+            background-color: $color-primary-light
+        }
+        .pet__btn:hover {
+            background-color: transparentize($color-primary-light, 0.5);
+        }
+    }
+
+    * {
+        margin-bottom: 30px;
+    }
+
+    &__photo {
+    }
+    &__name {
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+    &__btn {
+        box-sizing: border-box;
+        width: 187px;
+        height: 52px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $color-primary;
+        border-radius: 100px;
+        font-family: 'Georgia';
+        font-size: 17px;
+        line-height: 1.3;
+        letter-spacing: 0.06em;
+        background: transparent;
+        color: $color-dark-3xl;
+    }
+}
+.main__help {
+    padding-top: 80px;
+    padding-bottom: 100px;    
+}
+.help {
+    background-color: $color-light-xl;
+    
+    &__title {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        column-gap: 10%;
+        row-gap: 55px;
+        
+    }
+    &__item {
+        text-align: center;
+    }
+    &__icon {
+        margin-bottom: 30px;
+    }
+    &__text {
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 1.15;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+}
+
+.main__donation {
+    padding-top: 80px;
+    padding-bottom: 100px;    
+}
+.donation {
+    padding-top: 80px;
+    padding-bottom: 100px;    
+
+    background-color: $color-light-l;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+
+    }
+    &__image {
+        flex-basis: 505px;
+        flex-shrink: 1;
+    }
+    &__content {
+        flex-basis: 380px;
+        flex-shrink: 0;
+    
+    }
+    &__title {
+        margin-bottom: 18px;
+
+    }
+    &__subtitle {
+        margin-bottom: 20px;
+        font-family: 'Georgia';
+        font-size: 15px;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+    &__link {
+        cursor: pointer;
+        margin-bottom: 20px;
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 9px;
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 1.15;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        background-color: $color-primary;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $color-primary-light;
+        }
+
+
+        img {
+            margin-right: 10px;
+        }
+        p {
+            display: inline;
+        }
+    }
+    &__text {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-dark-m;
+    }
+}
+
+.footer {
+    &__container {
+        margin-top: 40px;
+    }
+    &__row {
+        height: 310px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    
+    &__contacts {
+        padding-top: 16px;
+        padding-bottom: 60px;
+        width: 279px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__title {
+        font-family: 'Georgia';
+        font-size: 35px;
+        line-height: 1.3;
+        letter-spacing: 0.06em;
+        color: $color-light-xl;
+    }
+    &__email {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-family: 'Georgia';
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: $color-primary;
+        
+        & img {
+            margin-right: 20px;
+        }
+    }
+    &__location {
+        width: 302px;
+        padding-top: 16px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+    }
+    &__image {
+        width: 300px;
+        min-height: 310px;
+        // flex-shrink: 0;
+
+    }
+}
