@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Georgia';
+  src: local("Georgia"), url("../../../assets/fonts/Georgia.ttf") format("ttf"), url("../../../assets/fonts/Georgia.woff") format("woff"), url("../../../assets/fonts/Georgia.eot") format("eot"), url("../../../assets/fonts/Georgia.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: local("Arial"), url("../../../assets/fonts/Arial.ttf") format("ttf"), url("../../../assets/fonts/Arial.woff") format("woff"), url("../../../assets/fonts/Arial.eot") format("eot"), url("../../../assets/fonts/Arial.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: local("Arial"), url("../../../assets/fonts/Arial-Italic.ttf") format("ttf"), url("../../../assets/fonts/Arial-Italic.woff") format("woff"), url("../../../assets/fonts//Arial-Italic.eot") format("eot"), url("../../../assets/fonts/Arial-Italic.svg") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -154,7 +175,7 @@ body {
 }
 
 .start-screen__description {
-  margin-bottom: 42px;
+  margin-bottom: 57px;
   color: #F6F6F6;
 }
 
