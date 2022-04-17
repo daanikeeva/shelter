@@ -650,6 +650,8 @@ html {
   .footer__location {
     width: auto;
     height: auto;
+  }
+  .footer__location *:not(:first-child) {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;

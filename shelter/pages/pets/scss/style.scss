@@ -533,7 +533,9 @@ html {
             @include small() {
                 width: auto;
                 height: auto;
-                align-items: start;
+                *:not(:first-child) {
+                    align-items: start;
+            }
                 
             }
             
