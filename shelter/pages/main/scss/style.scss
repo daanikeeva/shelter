@@ -400,7 +400,7 @@ body {
     }
     &__image {
         @include small() {
-            width: 260 / 300 * 100%;
+            width: 260px;
         }
     }
     &__content {
@@ -746,12 +746,12 @@ body {
         flex-shrink: 1;
         
         @include medium() {
-            width:  505 / 708 * 100%;
+            width:  505px;
             flex-basis: auto;
         }
 
         @include small() {
-            width: (260 / 300 * 100%);
+            width: 260px;
         }
     }
     &__content {

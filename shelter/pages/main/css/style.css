@@ -440,7 +440,7 @@ body {
 
 @media (max-width: 767.98px) {
   .about__image {
-    width: 86.66667%;
+    width: 260px;
   }
 }
 
@@ -928,7 +928,7 @@ body {
 
 @media (max-width: 1279.98px) {
   .donation__image {
-    width: 71.32768%;
+    width: 505px;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
@@ -936,7 +936,7 @@ body {
 
 @media (max-width: 767.98px) {
   .donation__image {
-    width: 86.66667%;
+    width: 260px;
   }
 }
 
