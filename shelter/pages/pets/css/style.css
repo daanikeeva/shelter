@@ -56,6 +56,10 @@ html {
   }
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .section-title {
   font-family: 'Georgia';
   font-size: 35px;
@@ -112,6 +116,19 @@ html {
 
 .header__logo {
   text-align: right;
+}
+
+.header__overlay {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #292929;
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .header__burger {
@@ -221,11 +238,14 @@ html {
     background-color: #FFFFFF;
     -webkit-transition: all 1s ease 0s;
     transition: all 1s ease 0s;
+    z-index: 2;
   }
 }
 
 .menu__list.open {
   right: 0;
+  -webkit-box-shadow: 0 0 0 500px rgba(41, 41, 41, 0.6);
+          box-shadow: 0 0 0 500px rgba(41, 41, 41, 0.6);
 }
 
 .menu__link {

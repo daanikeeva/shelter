@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -18,6 +17,7 @@
                     <div class="logo__subtitle">Shelter for pets in Boston</div>
                 </a>
                 <nav class="header__menu menu">
+                    <div class="header__overlay"></div>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <a href="#" class="menu__link menu__link_active">About the shelter</a>
@@ -32,6 +32,11 @@
                             <a href="#contacts" class="menu__link">Contacts</a>
                         </li>
                     </ul>
+                    <a href="##" class="menu__logo logo">
+                        <h1 class="logo__title">Cozy House</h1>
+                        <div class="logo__subtitle">Shelter for pets in Boston</div>
+                    </a>
+
                 </nav>
                 <div class="header__burger">
                     <span></span>
@@ -64,21 +69,60 @@
                         <h3 class="our-friends__title section-title">Our friends who<br>are looking for a house</h3>
                         <div class="our-friends__slider slider">
                             <button class="slider__prev"><img src="../../assets/icons/prev.svg" alt=""></button>
-                            <div class="slider__cards">
-                                <div class="slider__item pet" data-pet="katrine">
-                                    <img class="pet__photo" src="../../assets/images/katrine.png" alt="photo pet Katrine">
-                                    <h4 class="pet__name">Katrine</h4>
-                                    <button class="pet__btn">Learn more</button>
-                                </div>
-                                <div class="slider__item pet" data-pet="jennifer">
-                                    <img class="pet__photo" src="../../assets/images/jennifer.png" alt="photo pet Katrine">
-                                    <h4 class="pet__name">Jennifer</h4>
-                                    <button class="pet__btn">Learn more</button>
-                                </div>
-                                <div class="slider__item pet" data-pet="woody">
-                                    <img class="pet__photo" src="../../assets/images/woody.png" alt="photo pet Katrine">
-                                    <h4 class="pet__name">Woody</h4>
-                                    <button class="pet__btn">Learn more</button>
+                            <div class="slider__wrapper">
+                                <div class="slider__cards">
+                                    <div class="slider__cards_prev">
+                                        <div class="slider__item pet" data-pet="Timmy">
+                                            <img class="pet__photo" src="../../assets/images/timmy.png" alt="photo Timmy">
+                                            <h4 class="pet__name">Timmy</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="Freddie">
+                                            <img class="pet__photo" src="../../assets/images/freddie.png" alt="photo Freddie">
+                                            <h4 class="pet__name">Freddie</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="Sophia">
+                                            <img class="pet__photo" src="../../assets/images/sophia.png" alt="photo Sophia">
+                                            <h4 class="pet__name">Sophia</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                    </div>
+                                    <div class="slider__cards_active">
+                                        <div class="slider__item pet" data-pet="katrine">
+                                            <img class="pet__photo" src="../../assets/images/katrine.png" alt="photo pet Katrine">
+                                            <h4 class="pet__name">Katrine</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="jennifer">
+                                            <img class="pet__photo" src="../../assets/images/jennifer.png" alt="photo Jennifer">
+                                            <h4 class="pet__name">Jennifer</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="woody">
+                                            <img class="pet__photo" src="../../assets/images/woody.png" alt="photo pet Woody">
+                                            <h4 class="pet__name">Woody</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slider__cards_next">
+                                        <div class="slider__item pet" data-pet="scarlett">
+                                            <img class="pet__photo" src="../../assets/images/scarlett.png" alt="photo pet scarlett">
+                                            <h4 class="pet__name">Scarlett</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="Freddie">
+                                            <img class="pet__photo" src="../../assets/images/freddie.png" alt="photo Freddie">
+                                            <h4 class="pet__name">Freddie</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                        <div class="slider__item pet" data-pet="charly">
+                                            <img class="pet__photo" src="../../assets/images/charly.png" alt="photo pet Сharly">
+                                            <h4 class="pet__name">Сharly</h4>
+                                            <button class="pet__btn">Learn more</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <button class="slider__next"><img src="../../assets/icons/next.svg" alt=""></button>
@@ -165,7 +209,29 @@
                 </div>
             </div>
         </footer>
+        <div class="overlay">
+            <!-- <div class="overlay__modal modal">
+                <button class="modal__btn-close"></button>
+                <img src="../../assets/images/jennifer.png" alt="Jennifer" class="modal__image">
+                <div class="modal__content">
+                    <div class="modal__name">Jennifer</div>
+                    <div class="modal__type">Dog - Labrador</div>
+                    <p class="modal__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                    <ul class="modal__info-about-pet">
+                        <li class="modal__age">
+                            <span>Age: </span>2 months</li>
+                        <li class="modal__inoculations">
+                            <span>Inoculations: </span>none</li>
+                        <li class="modal__diseases">
+                            <span>Diseases: </span>none</li>
+                        <li class="modal__parasites">
+                            <span>Parasites: </span>none</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
     </div>
-
+    <script  type="module" src="script.js" ></script>
+    <script type="module" src="petsData.js"></script>
 </body>
 </html>

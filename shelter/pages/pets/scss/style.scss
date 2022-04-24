@@ -76,6 +76,15 @@ html {
         padding: 0 10px;
     }
 }
+
+body.lock {
+    overflow: hidden;
+
+    // .header__overlay {
+    //     // display: block;
+    //     right: 0;
+    // }
+}
 // ======= bloks =====
 .section-title {
     font-family: 'Georgia';
@@ -124,7 +133,17 @@ html {
     }
     &__menu {
     }
-
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.3s;
+        background-color: $color-dark-3xl;
+        opacity: 0.6;
+        z-index: 1;
+    }
     &__burger {
         position: relative;
         display: none;
@@ -218,12 +237,13 @@ html {
             justify-content: center;
             background-color: $color-light-xl;
             transition: all 1s ease 0s;
+            z-index: 2;
             
         }
         &.open {
             right: 0;
+            box-shadow: 0 0 0 500px rgba(41, 41, 41, 0.6); 
         }
-    }
     &__item {
     }
     &__link {
