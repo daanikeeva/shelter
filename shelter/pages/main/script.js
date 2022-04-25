@@ -78,7 +78,8 @@ sliderContainer.addEventListener('animationend', function(animation) {
 function randomNumber(max, min = 0) {
     return Math.floor(min + Math.random() * (max + 1 - min))
 }
-// ======= генерация 3 уникальных карточек для слайдера
+
+    // ======= генерация 3 уникальных карточек для слайдера
 const createCards = () => {
     let actualPets = petsData.filter((pet) => !activeCards.innerHTML.includes(pet.name))
     

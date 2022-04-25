@@ -44,14 +44,18 @@ let currentPage = 0;
 let petsDataForPages = [];
 
 // рандомное распределение карточек для страниц
+
 function createArraysForPages() {
-    for (let i = 0; i < 48; i=i+cardsCount) {
-        petsDataForPages.push(petsRepeat.slice(i, i+cardsCount).sort(() => Math.random() - 0.5))
+    for (let i = 0; i < 48; i = i + cardsCount) {
+        petsDataForPages.push(petsRepeat.slice(i, i + cardsCount).sort(() => Math.random() - 0.5))
     }
+    petsDataForPages.sort(() => Math.random() - 0.5)
     console.log(petsDataForPages)
 }
-createArraysForPages()
 
+
+
+createArraysForPages()
 
 function createCards(page) {
     cardsContainer.innerHTML = '';
@@ -214,4 +218,52 @@ function closeModal() {
 }
 
 // ============= 
+
+// ================== проба пера рандом карточек
+// function randomNumber(max, min = 0) {
+//     return Math.floor(min + Math.random() * (max + 1 - min))
+// }
+
+// function randomcard() {
+//     let randomArr = [];
+//     let allCards = [].concat(petsRepeat);
+    
+//     let double = []
+//     for (let i = 0; i < (48 / cardsCount); i++) {
+//         let pageCard = [];
+//         for (let j = 0; j < cardsCount; j++) {
+//             console.log('double', double)
+//             if (double.length > 0) {
+//                 console.log("дублю не пустой, добавляем карточку из него")
+//                 double.forEach((el, ind, arr) => {
+//                     if (!pageCard.includes(el)) {
+//                         pageCard.push(el);
+//                         arr.splice(ind, 1)
+//                         j +=1;
+//                     }
+//                 })
+//             }
+//                 console.log("после дубля")
+//                 let cardToAdd = allCards.splice(randomNumber(allCards.length - 1), 1);
+//                 if (allCards.length === 1) {
+//                     pageCard.push(...cardToAdd)
+//                 }
+//                 else 
+//                 if (pageCard.includes(...cardToAdd)) {
+//                     double.push(...cardToAdd);
+//                     j -= 1;
+//                     console.log('не добавлять карточку', ...cardToAdd)
+//                 }
+//                 else {
+//                     pageCard.push(...cardToAdd)
+//                 }
+    
+//         }
+//         console.log('pageCard', pageCard);
+//         randomArr.push(pageCard)
+//     }
+//     console.log(randomArr, allCards)
+    
+// }
+// randomcard()
 
