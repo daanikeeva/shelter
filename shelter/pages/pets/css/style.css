@@ -770,6 +770,7 @@ body.lock .menu__overlay {
   background-color: #FAFAFA;
   color: #000000;
   cursor: auto;
+  border-radius: 9px;
 }
 
 @media (max-width: 1279.98px) {

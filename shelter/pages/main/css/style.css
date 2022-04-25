@@ -1482,6 +1482,7 @@ body.lock .menu__overlay {
           column-gap: 9px;
   background-color: #FAFAFA;
   color: #000000;
+  border-radius: 9px;
   cursor: auto;
 }
 

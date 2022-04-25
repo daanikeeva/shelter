@@ -1138,6 +1138,7 @@ body.lock {
     column-gap: 9px;
     background-color: $color-light-s;
     color: $color-dark;
+    border-radius: 9px;
     cursor: auto;
     
     @include medium() {

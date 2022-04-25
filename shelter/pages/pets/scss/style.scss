@@ -626,6 +626,8 @@ body.lock {
     background-color: $color-light-s;
     color: $color-dark;
     cursor: auto;
+    border-radius: 9px;
+
     
     @include medium() {
         width: (630 / 768) * 100%;
