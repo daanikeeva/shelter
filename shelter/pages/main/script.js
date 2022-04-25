@@ -79,14 +79,17 @@ function randomNumber(max, min = 0) {
     return Math.floor(min + Math.random() * (max + 1 - min))
 }
 
+let cardsCount = window.innerWidth >= 1280 ? 3 : window.innerWidth < 768 ? 1 : 2;
+
     // ======= генерация 3 уникальных карточек для слайдера
+
+
 const createCards = () => {
     let actualPets = petsData.filter((pet) => !activeCards.innerHTML.includes(pet.name))
     
     let template = '';
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < cardsCount; i++) {
         let randomPet = randomNumber(actualPets.length-1);
-        console.log(randomPet)
         if (!template.includes(actualPets[randomPet].name)) {
             template += `<div class="slider__item pet">
     <img class="pet__photo" src='${actualPets[randomPet].img}' alt="${actualPets[randomPet].name}">
@@ -98,7 +101,6 @@ const createCards = () => {
             i -= 1;
         }
     }
-    // console.log(template)
     return template;
 }
 

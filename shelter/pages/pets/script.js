@@ -50,7 +50,6 @@ function createArraysForPages() {
         petsDataForPages.push(petsRepeat.slice(i, i + cardsCount).sort(() => Math.random() - 0.5))
     }
     petsDataForPages.sort(() => Math.random() - 0.5)
-    console.log(petsDataForPages)
 }
 
 
@@ -128,8 +127,6 @@ btnToStart.onclick = () => {
 
 // ======= деактивация кнопок
 function disableButtons(page, ...args) {
-    // args.forEach(el => {console.log(el)})
-    console.log(petsDataForPages.length, currentPage)
     if (page === 0 || page === petsDataForPages.length-1) {
         args.forEach(el => {
             el.classList.add('navigation__btn_disabled');
@@ -140,12 +137,9 @@ function disableButtons(page, ...args) {
 
 // =======активация кнопок
 function activateButtons(page, ...args) {
-    // args.forEach(el => {console.log(el)})
-    console.log('activ', petsDataForPages.length-1, currentPage)
     if (page > 0 || page < petsDataForPages.length-1) {
         args.forEach(el => {
             el.removeAttribute("disabled", "disabled");
-            console.log('удалить класс')
             el.classList.remove('navigation__btn_disabled')
         })
     }
@@ -156,8 +150,6 @@ function activateButtons(page, ...args) {
 const overlayModal = document.querySelector('.overlay');
 
 cardsContainer.addEventListener('click', (event) => {
-    console.log('event.target', event.target)
-    console.log('event.currentTarget', event.currentTarget)
         if (event.target.closest('.pet')) {
             let card = event.target.closest('.pet');
             let petName = card.children[1].innerHTML;
@@ -166,7 +158,6 @@ cardsContainer.addEventListener('click', (event) => {
             overlayModal.classList.add('open');
             document.body.style.overflowY = 'hidden'
             
-            // console.log('modal', modal);
 
         }
     } 
