@@ -80,10 +80,10 @@ html {
 body.lock {
     overflow: hidden;
 
-    // .header__overlay {
-    //     // display: block;
-    //     right: 0;
-    // }
+    .menu__overlay {
+        display: block;
+        right: 0;
+    }
 }
 // ======= bloks =====
 .section-title {
@@ -133,17 +133,6 @@ body.lock {
     }
     &__menu {
     }
-    &__overlay {
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 100vw;
-        height: 100vh;
-        transition: 0.3s;
-        background-color: $color-dark-3xl;
-        opacity: 0.6;
-        z-index: 1;
-    }
     &__burger {
         position: relative;
         display: none;
@@ -155,12 +144,6 @@ body.lock {
         @include small() {
             display: block;
         }
-
-        // span {
-        //     width: 100%;
-        //     height: 2px;
-        //     background-color: $color-primary;
-        // }
 
         &::before, &::after {
             content: '';
@@ -194,7 +177,6 @@ body.lock {
                 transform: rotate(90deg) translate(0px, 1px);
             }
         }
-
     }
 }
 
@@ -219,7 +201,25 @@ body.lock {
 
 
 .menu {
-    
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.3s;
+        background-color: $color-dark-3xl;
+        opacity: 0.6;
+        z-index: 1;
+    }
+    &__logo {
+        position: absolute;
+        right: 126px;
+        top: 30px;
+        transform: translateY(-100px);
+        transition: 0.5s;
+    }
+
     &__list {
         display: flex;
         flex-direction: row;
@@ -236,13 +236,20 @@ body.lock {
             align-items: center;
             justify-content: center;
             background-color: $color-light-xl;
-            transition: all 1s ease 0s;
+            transition: all 0.5s ease 0s;
             z-index: 2;
             
         }
         &.open {
             right: 0;
-            box-shadow: 0 0 0 500px rgba(41, 41, 41, 0.6); 
+            // box-shadow: 0 0 0 500px rgba(41, 41, 41, 0.6); 
+
+            & + .menu__logo {
+                transform: translateY(0px);
+                z-index: 5;
+            }
+        }
+
         }
     &__item {
     }
@@ -419,12 +426,24 @@ body.lock {
         font-family: 'Georgia';
         font-size: 20px;
         line-height: 1.09;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+        }
         
     }
     &__btn_disabled {
         cursor: default;
         color: $color-dark-s;
         border-color: $color-dark-s;
+        &:hover {
+            color: $color-dark-s;
+            border-color: $color-dark-s;
+            background-color: transparent;
+            
+        }
     }
     &__btn_to-start {
     }
@@ -432,22 +451,19 @@ body.lock {
     }
     &__btn_now {
         background-color: $color-primary;
+        cursor: default;
+        &:hover {
+            border-color: $color-primary;
+            background-color: $color-primary;
+
+        }
     }
     &__btn_next {
-        transition: 0.3s;
 
-        &:hover {
-            background-color: $color-primary-light;
-            border-color: $color-primary-light;
-        }
     }
     &__btn_to-end {
-        transition: 0.3s;
+        // transition: 0.3s;
 
-        &:hover {
-            background-color: $color-primary-light;
-            border-color: $color-primary-light;
-        }
     }
 }
 
@@ -579,3 +595,136 @@ body.lock {
         }
     }
     
+    .overlay {
+        transform: scale(0);
+        cursor: pointer;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparentize($color-dark-3xl, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.1s;
+        &:hover>div:not(:hover) .modal__btn-close {
+            border: 2px solid $color-primary-light;
+            background-color: $color-primary-light;
+        }
+        &.open {
+            transform: scale(1);
+        }
+    }
+    
+    .modal {
+    // overflow-y: auto;
+    position: relative;
+    width: (900 / 1280) * 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 9px;
+    background-color: $color-light-s;
+    color: $color-dark;
+    cursor: auto;
+    
+    @include medium() {
+        width: (630 / 768) * 100%;
+
+    }
+
+    @include small() {
+        width: (240 / 320) * 100%;
+    }
+    // &:hover>div:not(:hover) .modal__btn-close {
+    //     border: 2px solid $color-primary;
+    //     background-color: transparent;
+    // }
+
+    &__btn-close {
+        position: absolute;
+        right: -42px;
+        top: -52px;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-primary;
+        box-sizing: border-box;
+        border-radius: 100px;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        
+        &:hover {
+            border: 2px solid $color-primary-light;
+            background-color: $color-primary-light;
+        }
+
+        @include small() {
+            right: -30px;
+        }
+    }
+    &__image {
+        width: 500px;
+        @include medium() {
+            width: 350px;
+        }
+        @include small() {
+            display: none;
+        }
+    }
+    &__content {
+        padding: 50px 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        @include medium() {
+            padding: 10px;
+
+        }
+    }
+    &__name {
+        font-size: 35px;
+        line-height: 130%;
+        margin-bottom: 10px;
+    }
+    &__type {
+        font-size: 20px;
+        line-height: 115%;
+        margin-bottom: 40px;
+        
+        @include medium() {
+            margin-bottom: 20px;
+        }
+    }
+    &__description {
+        margin-bottom: 40px;
+        @include medium() {
+            margin-bottom: 20px;
+        }
+
+    }
+    &__info-about-pet {
+
+        li:not(:last-child) {
+            margin-bottom: 10px;
+            @include medium(){
+                
+                margin-bottom: 5px;
+            }
+        }
+        & span {
+            font-weight: 700;
+        }
+    }
+    &__age {
+    }
+    &__inoculations {
+
+    }
+    &__diseases {
+    }
+    &__parasites {
+    }
+}

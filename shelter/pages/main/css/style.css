@@ -64,7 +64,7 @@ body.lock {
   overflow: hidden;
 }
 
-body.lock .header__overlay {
+body.lock .menu__overlay {
   display: block;
   right: 0;
 }
@@ -126,19 +126,6 @@ body.lock .header__overlay {
 
 .header__logo {
   text-align: right;
-}
-
-.header__overlay {
-  position: fixed;
-  top: 0;
-  right: -100vw;
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #292929;
-  opacity: 0.6;
-  z-index: 1;
 }
 
 .header__burger {
@@ -218,6 +205,19 @@ body.lock .header__overlay {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #FFFFFF;
+}
+
+.menu__overlay {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #292929;
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .menu__logo {

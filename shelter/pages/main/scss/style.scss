@@ -55,6 +55,7 @@ html {
     scroll-behavior: smooth; 
 }
 body {
+    // width: 100vw;
     background: url(../../../assets/images/noise_transparent.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 .wrapper {
@@ -83,7 +84,7 @@ body {
 body.lock {
     overflow: hidden;
 
-    .header__overlay {
+    .menu__overlay {
         display: block;
         right: 0;
     }
@@ -140,17 +141,7 @@ body.lock {
     }
     &__menu {
     }
-    &__overlay {
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 100vw;
-        height: 100vh;
-        transition: 0.3s;
-        background-color: $color-dark-3xl;
-        opacity: 0.6;
-        z-index: 1;
-    }
+    
     &__burger {
         position: relative;
         display: none;
@@ -233,16 +224,24 @@ body.lock {
 
 
 .menu {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.3s;
+        background-color: $color-dark-3xl;
+        opacity: 0.6;
+        z-index: 1;
+    }
     // position: relative;
     &__logo {
         position: absolute;
         right: 126px;
         top: 30px;
-
-transform: translateY(-100px);
-        // transform: scale(0);
+        transform: translateY(-100px);
         transition: 0.5s;
-        // transition-delay: 0.s;
     }
     &__list {
         display: flex;

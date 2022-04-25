@@ -9,12 +9,14 @@ const nav = document.querySelector('.menu');
 function closeMenu() {
     if (iconMenu.classList.contains('open') && menuList.classList.contains('open')) {
         document.body.classList.remove('lock');
+        document.body.style.paddingRight = '';
         menuList.classList.remove('open');
         iconMenu.classList.remove('open');
     }
 }
 iconMenu.addEventListener('click', function() {
     document.body.classList.toggle('lock');
+    document.body.style.paddingRight = (window.innerWidth - document.documentElement.clientWidth)+'px';
 	menuList.classList.toggle('open');
     iconMenu.classList.toggle('open');
 })
@@ -22,7 +24,7 @@ iconMenu.addEventListener('click', function() {
 nav.addEventListener('click', event => {
     let target = event.target;
     if (target === iconMenu || 
-        target.className === 'menu__link' || 
+        target.classList.contains('menu__link') || 
         !target.closest('.menu__list')) {
         closeMenu()
     }
@@ -73,18 +75,17 @@ sliderContainer.addEventListener('animationend', function(animation) {
     rightArrow.addEventListener('click', moveRight)
 })
 
-function randomNumber(n) {
-    return Math.floor(Math.random() * (n));
+function randomNumber(max, min = 0) {
+    return Math.floor(min + Math.random() * (max + 1 - min))
 }
-
-
 // ======= генерация 3 уникальных карточек для слайдера
 const createCards = () => {
     let actualPets = petsData.filter((pet) => !activeCards.innerHTML.includes(pet.name))
     
     let template = '';
     for (let i = 0; i < 3; i++) {
-        let randomPet = randomNumber(actualPets.length);
+        let randomPet = randomNumber(actualPets.length-1);
+        console.log(randomPet)
         if (!template.includes(actualPets[randomPet].name)) {
             template += `<div class="slider__item pet">
     <img class="pet__photo" src='${actualPets[randomPet].img}' alt="${actualPets[randomPet].name}">
@@ -96,7 +97,7 @@ const createCards = () => {
             i -= 1;
         }
     }
-    console.log(template)
+    // console.log(template)
     return template;
 }
 
@@ -106,8 +107,6 @@ const createCards = () => {
 const overlayModal = document.querySelector('.overlay');
 
 sliderContainer.addEventListener('click', (event) => {
-    console.log('event.target', event.target)
-    console.log('event.currentTarget', event.currentTarget)
         if (event.target.closest('.pet')) {
             let card = event.target.closest('.pet');
             let petName = card.children[1].innerHTML;
@@ -115,8 +114,6 @@ sliderContainer.addEventListener('click', (event) => {
             overlayModal.innerHTML = modal;
             overlayModal.classList.add('open');
             document.body.style.overflowY = 'hidden'
-            
-            // console.log('modal', modal);
 
         }
     } 
@@ -176,13 +173,8 @@ function closeModal() {
 
 // =================
 
-import dogAndCat from '../../assets/pets.json' assert { type: "json"};
-console.log(dogAndCat[0])
+// import dogAndCat from '../../assets/pets.json' assert { type: "json"};
+// console.log(dogAndCat[0])
 
-
-// ==== массив из 48 карточек
-let petsRepeat = Array(6).fill(dogAndCat).reduce((allPets, arr) => allPets.concat(arr));
-console.log(petsRepeat)
-// console.log(petsRepeat.reduce((allPets, arr) => allPets.concat(arr)))
 
 // ===========

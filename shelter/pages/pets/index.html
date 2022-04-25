@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -17,9 +17,9 @@
                     <h1 class="logo__title">Cozy House</h1>
                     <div class="logo__subtitle">Shelter for pets in Boston</div>
                 </a>
-                <div class="header__overlay"></div>
+                <!-- <div class="header__overlay"></div> -->
                 <nav class="header__menu menu">
-                    <!-- <div class="header__overlay"></div> -->
+                    <div class="menu__overlay"></div>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <a href="../main/index.html" class="menu__link">About the shelter</a>
@@ -34,6 +34,10 @@
                             <a href="#contacts" class="menu__link">Contacts</a>
                         </li>
                     </ul>
+                    <a href="../main/index.html" class="menu__logo logo">
+                        <h1 class="logo__title">Cozy House</h1>
+                        <div class="logo__subtitle">Shelter for pets in Boston</div>
+                    </a>
                 </nav>
                 <div class="header__burger">
                     <span></span>
@@ -117,6 +121,8 @@
                 </div>
             </div>
         </footer>
+        <div class="overlay">
+        </div>
     </div>
 
 </body>
